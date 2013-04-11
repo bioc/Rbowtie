@@ -303,7 +303,7 @@ static inline int64_t fileSize(const char* name) {
 }
 
 // Forward declarations for Ebwt class
-class SideLocus;
+struct SideLocus;
 template<typename TStr> class EbwtSearchParams;
 
 /**
@@ -3945,7 +3945,7 @@ void Ebwt<TStr>::joinToDisk(
 	TStr& ret,
 	ostream& out1,
 	ostream& out2,
-	uint32_t seed = 0)
+	uint32_t seed)
 {
 	RandomSource rand; // reproducible given same seed
 	rand.init(seed);
